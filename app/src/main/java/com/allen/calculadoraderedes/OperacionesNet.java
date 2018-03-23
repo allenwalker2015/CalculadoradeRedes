@@ -10,29 +10,31 @@ import java.lang.Math;
 public class OperacionesNet {
 
     public String[] generateIPs(String ip,String subnet){
-        String[] res = new String[4];
+        String[] res = new String[5];
         int  n_subnet = Integer.parseInt(subnet);
-        String netid="",broadcast="";
+        String net_id="",broadcast="",n_mask="";
         String s_mask =new String(new char[n_subnet]).replace("\0", "1")
                 + new String(new char[32-n_subnet]).replace("\0", "0");
         String s_mask2 =new String(new char[n_subnet]).replace("\0", "0")
                 + new String(new char[32-n_subnet]).replace("\0", "1");
         String[] ip_octet = ip.split("\\.");
-        Log.d("s mask", "generateIPs: "+s_mask);
+//        Log.d("s mask", "generateIPs: "+s_mask);
         for(int i = 0;i<4 ; i++ ){
-            netid = netid
+            n_mask = n_mask
+                    +  Integer.parseInt(s_mask.substring(i * 8,i*8+8),2) + ".";
+            net_id = net_id
                     + new Integer(Integer.parseInt(ip_octet[i]) & Integer.parseInt(s_mask.substring(i * 8,i*8+8),2))
                     +  ".";
             broadcast = broadcast
                     +new Integer(Integer.parseInt(ip_octet[i]) | Integer.parseInt(s_mask2.substring(i * 8,i*8+8),2))
                     + ".";
-            Log.d("OCTETOS", Integer.parseInt(ip_octet[i]) + "=" + Integer.parseInt(s_mask.substring(i * 8,i*8+8),2) +" generateIPs: "+netid);
+            Log.d("OCTETOS", Integer.parseInt(ip_octet[i]) + "=" + Integer.parseInt(s_mask.substring(i * 8,i*8+8),2) +" generateIPs: "+net_id);
         }
-        res[0] = netid.substring(0,netid.length()-1);
+        res[0] = net_id.substring(0,net_id.length()-1);
         res[1] = broadcast.substring(0,broadcast.length()-1);
         res[2] = String.format("%.0f",Math.pow(2,32-n_subnet));
         res[3] = String.format("%.0f",Math.pow(2,32-n_subnet)-2);
-
+        res[4] = n_mask.substring(0,n_mask.length()-1);
 //        Log.d("NETID", "generateIPs: "+netid);
 //        Log.d("BROADCAST", "generateIPs: "+broadcast);
 //        Log.d("TOTALIPS", "generateIPs: "+totalips);
