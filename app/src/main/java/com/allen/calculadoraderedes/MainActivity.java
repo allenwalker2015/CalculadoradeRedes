@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         String ip= clientip.getText().toString();
         String subnet = clientsubnet.getText().toString();
         Log.d("IP", "calcular: "+ ip);
-        if(validador.validate(ip) && Integer.parseInt(subnet)<=32 && Integer.parseInt(subnet)>=0){
+        if(validador.validate(ip) && Integer.parseInt(subnet)<=32 && Integer.parseInt(subnet)>=0){ // Se valida si la ip es valida y ademas si la mascara se encuentra entre 0 y 32
             String[] res = op.generateIPs(ip,subnet);
             netid.setText(res[0]);
             broadcast.setText(res[1]);

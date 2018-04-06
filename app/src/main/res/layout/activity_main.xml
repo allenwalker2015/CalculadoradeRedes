@@ -86,12 +86,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/mascarainput"
+        android:id="@+id/iphost"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-
+            android:layout_below="@id/iphost"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/totalipstext"
@@ -125,6 +126,58 @@
 
             <EditText
                 android:id="@+id/clientipsinput"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:hint="0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iphost"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/bitsdered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Bits de red" />
+
+            <EditText
+                android:id="@+id/bitsderedinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:enabled="false"
+                android:hint="0" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/bitsdehost"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Bits de host" />
+
+            <EditText
+                android:id="@+id/bitsdehostinput"
                 android:enabled="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
