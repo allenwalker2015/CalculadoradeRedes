@@ -151,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Bits de red" />
+                android:text="@string/bits_de_red" />
 
             <EditText
                 android:id="@+id/bitsderedinput"
@@ -174,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Bits de host" />
+                android:text="@string/bits_de_host" />
 
             <EditText
                 android:id="@+id/bitsdehostinput"
@@ -195,5 +195,5 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="32dp"
         android:onClick="calcular"
-        android:text="Calcular" />
+        android:text="@string/calcular" />
 </RelativeLayout>

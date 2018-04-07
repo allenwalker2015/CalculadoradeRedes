@@ -7,4 +7,7 @@
     <string name="total_ips">Total IPs</string>
     <string name="_0">0</string>
     <string name="hosts">Hosts</string>
+    <string name="calcular">Calcular</string>
+    <string name="bits_de_red">Bits de red</string>
+    <string name="bits_de_host">Bits de host</string>
 </resources>
