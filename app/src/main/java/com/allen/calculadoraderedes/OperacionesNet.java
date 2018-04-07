@@ -45,6 +45,8 @@ public class OperacionesNet {
         res[4] = n_mask.substring(0,n_mask.length()-1);
         res[5] = ""+ (32 - n_subnet);
         res[6] = ""+ n_subnet;
+
+
         return res;
     }
 }
