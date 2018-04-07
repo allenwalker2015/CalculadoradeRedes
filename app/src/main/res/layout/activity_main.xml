@@ -19,7 +19,7 @@
         android:ems="10"
         android:digits="0123456789."
         android:textAlignment="center"
-        android:hint="IP"
+        android:hint="@string/ip"
         />
 
     <EditText
@@ -30,7 +30,7 @@
         android:layout_weight="1"
         android:digits="0123456789"
         android:textAlignment="center"
-        android:hint="SUBNET"
+        android:hint="@string/subnet"
         android:inputType="textPersonName" />
 </LinearLayout>
     <TextView
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:text="Net ID"/>
+        android:text="@string/net_id"/>
     <EditText
         android:id="@+id/netidinput"
         android:layout_below="@id/netidtext"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:text="Broadcast"/>
+        android:text="@string/broadcast"/>
     <EditText
         android:id="@+id/broadcastinput"
         android:layout_below="@id/broadcasttext"
@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Total IPs" />
+                android:text="@string/total_ips" />
 
             <EditText
                 android:id="@+id/totalipsinput"
@@ -122,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Hosts" />
+                android:text="@string/hosts" />
 
             <EditText
                 android:id="@+id/clientipsinput"
@@ -184,7 +184,7 @@
                 android:textAlignment="center"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:hint="0" />
+                android:hint="@string/_0" />
         </LinearLayout>
     </LinearLayout>
 

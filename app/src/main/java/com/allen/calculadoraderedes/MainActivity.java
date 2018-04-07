@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText clientip,clientsubnet,totalips,clientips,broadcast,netid, mask;
+    private EditText clientip,clientsubnet,totalips,clientips,broadcast,netid, mask,bitshost,bitsred;
     private IPValidator validador = new IPValidator();
     private OperacionesNet op = new OperacionesNet();
     @Override
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         broadcast = findViewById(R.id.broadcastinput);
         netid = findViewById(R.id.netidinput);
         mask = findViewById(R.id.mascarainput);
+        bitshost = findViewById(R.id.bitsdehostinput);
+        bitsred= findViewById(R.id.bitsderedinput);
     }
 
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
             totalips.setText(res[2]);
             clientips.setText(res[3]);
             mask.setText(res[4]);
+            bitshost.setText(res[5]);
+            bitsred.setText(res[6]);
             Log.d("IP", "LA IP ES VALIDA: "+ ip);
         }
     }

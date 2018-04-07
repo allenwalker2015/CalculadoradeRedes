@@ -11,7 +11,7 @@ public class OperacionesNet {
 
     //Devuelve un arreglo de tipo string de 5 posiciones con netid,broadcast,totalips, cantidad de hosts y la mascara en forma 255.255... etc
     public String[] generateIPs(String ip,String subnet){
-        String[] res = new String[5];
+        String[] res = new String[7];
         int  n_subnet = Integer.parseInt(subnet); // cantidad de bits de la mascara
         String net_id="",broadcast="",n_mask=""; // en estas string se iran almacenando los numeros generados y concatenandolos
         String s_mask =new String(new char[n_subnet]).replace("\0", "1")
@@ -40,6 +40,8 @@ public class OperacionesNet {
         res[2] = String.format("%.0f",Math.pow(2,32-n_subnet)); // Se calcula la cantidad de ips
         res[3] = String.format("%.0f",Math.pow(2,32-n_subnet)-2);// Se calcula la cantidad de host
         res[4] = n_mask.substring(0,n_mask.length()-1);
+        res[5] = ""+ (32 - n_subnet);
+        res[6] = ""+ n_subnet;
         return res;
     }
 }

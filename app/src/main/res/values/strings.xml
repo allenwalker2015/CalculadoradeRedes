@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Calculadora de Redes</string>
+    <string name="ip">IP</string>
+    <string name="subnet">SUBNET</string>
+    <string name="net_id">Net ID</string>
+    <string name="broadcast">Broadcast</string>
+    <string name="total_ips">Total IPs</string>
+    <string name="_0">0</string>
+    <string name="hosts">Hosts</string>
 </resources>
