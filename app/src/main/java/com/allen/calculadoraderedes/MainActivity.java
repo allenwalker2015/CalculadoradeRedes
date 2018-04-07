@@ -29,17 +29,20 @@ public class MainActivity extends AppCompatActivity {
     public void calcular(View v) {
         String ip= clientip.getText().toString();
         String subnet = clientsubnet.getText().toString();
-        Log.d("IP", "calcular: "+ ip);
-        if(validador.validate(ip) && Integer.parseInt(subnet)<=32 && Integer.parseInt(subnet)>=0){ // Se valida si la ip es valida y ademas si la mascara se encuentra entre 0 y 32
-            String[] res = op.generateIPs(ip,subnet);
-            netid.setText(res[0]);
-            broadcast.setText(res[1]);
-            totalips.setText(res[2]);
-            clientips.setText(res[3]);
-            mask.setText(res[4]);
-            bitshost.setText(res[5]);
-            bitsred.setText(res[6]);
-            Log.d("IP", "LA IP ES VALIDA: "+ ip);
+        Log.d("subnet", "calcular: "+ subnet.length());
+        if(subnet.length()>0) {
+            int sn =  Integer.parseInt(subnet);
+            if (validador.validate(ip) && sn <= 32 && sn >= 0) { // Se valida si la ip es valida y ademas si la mascara se encuentra entre 0 y 32
+                String[] res = op.generateIPs(ip, subnet);
+                netid.setText(res[0]);
+                broadcast.setText(res[1]);
+                totalips.setText(res[2]);
+                clientips.setText(res[3]);
+                mask.setText(res[4]);
+                bitshost.setText(res[5]);
+                bitsred.setText(res[6]);
+                Log.d("IP", "LA IP ES VALIDA: " + ip);
+            }
         }
     }
 }

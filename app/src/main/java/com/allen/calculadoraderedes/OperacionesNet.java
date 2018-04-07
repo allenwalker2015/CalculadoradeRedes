@@ -35,6 +35,9 @@ public class OperacionesNet {
 
            // Log.d("OCTETOS", Integer.parseInt(ip_octet[i]) + "=" + Integer.parseInt(s_mask.substring(i * 8,i*8+8),2) +" generateIPs: "+net_id);
         }
+
+
+
         res[0] = net_id.substring(0,net_id.length()-1); // Se elimina un punto  adicional que queda en las cadenas
         res[1] = broadcast.substring(0,broadcast.length()-1);
         res[2] = String.format("%.0f",Math.pow(2,32-n_subnet)); // Se calcula la cantidad de ips
